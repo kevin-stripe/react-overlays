@@ -287,7 +287,7 @@ const Modal = React.createClass({
         container={container}
       >
         <div
-          ref={'modal'}
+          ref={(el) => this.modal = el}
           role={role || 'dialog'}
           {...filteredProps}
           style={style}
@@ -495,7 +495,7 @@ const Modal = React.createClass({
 
   //instead of a ref, which might conflict with one the parent applied.
   getDialogElement() {
-    let node = this.refs.modal;
+    let node = this.modal;
     return node && node.lastChild;
   },
 

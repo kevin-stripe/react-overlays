@@ -88,7 +88,7 @@ class AutoAffix extends React.Component {
       return;
     }
 
-    const {top: offsetTop, width} = getOffset(this.refs.positioner);
+    const {top: offsetTop, width} = getOffset(this.positioner);
 
     const container = getContainer(this.props.container);
     let offsetBottom;
@@ -131,7 +131,7 @@ class AutoAffix extends React.Component {
 
     return (
       <div>
-        <div ref="positioner" />
+        <div ref={(el) => this.positioner = el} />
 
         <Affix
           {...props}
